@@ -9,4 +9,4 @@
 ## 运行步骤
 + Step 1. 将dataset放到/Support-Task-Selection/data/目录下
 + Step 2. 修改/Support-Task-Selection/train_lgb.py中dataset的名称，并运行
-+ Step 3. 跳转到DeepLearning or MachineLearning目录下运行最终的support task selection算法
++ Step 3. 跳转到DeepLearning or MachineLearning目录下，并根据对应指引运行最终的support task selection算法

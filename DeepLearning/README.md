@@ -3,5 +3,4 @@
 本项目提供了Support task selection在CMPNN模型上的接口
 
 运行方式：
-+ 把数据集放到/Support-Task-Selection/data目录下
-+ 修改/Support-Task-Selection/DeepLearning/chemprop/parsing.py 中的datasets变量，
++ 直接运行cross_validate.py，具体调用请参考[CMPNN](https://github.com/SY575/CMPNN)

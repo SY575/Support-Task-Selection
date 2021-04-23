@@ -5,3 +5,8 @@
 + Support Task Selection在深度学习&机器学习的实现
 
 接口细节详见/Support-Task-Selection/DeepLearning/README.md 与 /Support-Task-Selection/MachineLearning/README.md
+
+## 运行步骤
++ Step 1. 将dataset放到/Support-Task-Selection/data/目录下
++ Step 2. 修改/Support-Task-Selection/train_lgb.py中dataset的名称，并运行
++ Step 3. 跳转到DeepLearning or MachineLearning目录下运行最终的support task selection算法

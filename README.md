@@ -8,7 +8,8 @@
 
 ## 运行环境
 + RDKit
-+ LightGBM
++ LightGBM == 3.1.1
++ PyTorch == 1.6.0
 
 ## 运行步骤
 + Step 1. 将dataset放到/Support-Task-Selection/data/目录下

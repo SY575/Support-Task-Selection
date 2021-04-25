@@ -26,7 +26,7 @@ def smiles2vec(smiles):
             emb = list(MACCSkeys.GenMACCSKeys(mol))
         SMILES2VES[smiles] = emb
         return SMILES2VES[smiles]
-datasets = ['1clintox', '1hERG', '1sider', '1tox21', '1toxcast']
+datasets = ['1tox21']
 task = 'classification'
 assert task in ['regression', 'classification']
 for dataset in datasets:

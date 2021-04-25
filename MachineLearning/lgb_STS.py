@@ -16,10 +16,12 @@ from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 
 datasets = {
             '1tox21': 'classification',
-            '1toxcast': 'classification',
-            '1sider': 'classification',
-            '1clintox': 'classification',
-            '1hERG': 'classification',
+# =============================================================================
+#             '1toxcast': 'classification',
+#             '1sider': 'classification',
+#             '1clintox': 'classification',
+#             '1hERG': 'classification',
+# =============================================================================
             }
 d = '1tox21'
 p = '../SMILES2VES.pkl'

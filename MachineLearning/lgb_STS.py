@@ -22,7 +22,7 @@ datasets = {
             '1hERG': 'classification',
             }
 d = '1tox21'
-p = './SMILES2VES.pkl'
+p = '../SMILES2VES.pkl'
 if os.path.exists(p):
     SMILES2VES = pickle.load(open(p, 'rb'))
 else:
@@ -118,6 +118,7 @@ for target_col in pd.read_csv(
     df, class_weights, task_type = task_selection(
         target_col, train_smiles)
     cols = df.columns.tolist()[2:]
+    
 # =============================================================================
 #     df = pd.read_csv(f'../data/{d}.csv')
 #     df.columns = ['smiles'] + [f'{d}_{item}' for item in df.columns.tolist()[1:]]

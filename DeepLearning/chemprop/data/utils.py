@@ -266,23 +266,6 @@ def split_data(data_raw: MoleculeDataset=None,
 
 
 import pandas as pd
-from chem_feature import get_mol_features
-# =============================================================================
-# def load_data(args, ckpt):
-#     if os.path.exists(f'../data/{ckpt}.pkl'):
-#         df_blank = pickle.load(open(f'../data/{ckpt}.pkl', 'rb'))
-#     else:
-#         df_blank = pd.DataFrame({'smiles':[]})
-#         for dataset in args.datasets.keys():
-#             cols = pd.read_csv('../data/'+dataset+'.csv', nrows=1).columns.tolist()
-#             df0 = pd.read_csv('../data/'+dataset+'.csv', dtype={col:np.float16 for col in cols[1:]})
-#             df0.columns = ['smiles'] + [f'{dataset}_{col}_{args.datasets[dataset]}' for col in df0.columns[1:].tolist()]
-#             df_blank =  pd.merge(df_blank, df0, on='smiles', how='outer')
-#         df_blank['emb'] = df_blank['smiles'].map(get_mol_features)
-#         pickle.dump(df_blank, open(f'../data/{ckpt}.pkl', 'wb'))
-#         del df0
-#     return df_blank
-# =============================================================================
 
 
 from rdkit import Chem
@@ -314,8 +297,8 @@ def task_selection(args, train_smiles, ckpt='all_chem2'):
     
     df_blank = pd.DataFrame({'smiles':[]})
     for dataset in args.datasets.keys():
-        cols = pd.read_csv('../data_final/'+dataset+'.csv', nrows=1).columns.tolist()
-        df0 = pd.read_csv('../data_final/'+dataset+'.csv', dtype={col:np.float16 for col in cols[1:]})
+        cols = pd.read_csv('../data/'+dataset+'.csv', nrows=1).columns.tolist()
+        df0 = pd.read_csv('../data/'+dataset+'.csv', dtype={col:np.float16 for col in cols[1:]})
         df0.columns = ['smiles'] + [f'{dataset}_{col}' for col in df0.columns[1:].tolist()]
         df_blank = pd.merge(df_blank, df0, on='smiles', how='outer')
     del df0
@@ -337,10 +320,10 @@ def task_selection(args, train_smiles, ckpt='all_chem2'):
     
     result = {}
     for dataset in args.datasets:
-        cols = pd.read_csv(f'../data_final/{dataset}.csv', nrows=1).columns.tolist()
+        cols = pd.read_csv(f'../data/{dataset}.csv', nrows=1).columns.tolist()
         cols = cols[1:]
         for label in cols:
-            fp = f'./ckpt_STL/clf_{dataset}_{label}.pkl'
+            fp = f'../ckpt_STL/clf_{dataset}_{label}.pkl'
             try:
                 clf = pickle.load(open(fp, 'rb'))
                 result[f'{dataset}_{label}'] = clf.predict_proba(X)[:, 1]

@@ -10,6 +10,7 @@ from chemprop.utils import makedirs
 from chemprop.features import get_available_features_generators
 
 datasets = {
+    '1tox21': 'classification',
 # =============================================================================
 #     '1tox21': 'classification',
 #     '1toxcast': 'classification',
@@ -29,7 +30,9 @@ datasets = {
 #     '3CYP2D6I': 'classification',
 #     '3CYP3A4I': 'classification',
 # =============================================================================
-    '4pcba': 'classification',
+# =============================================================================
+#     '4pcba': 'classification',
+# =============================================================================
 # =============================================================================
 #     '5qm7': 'regression',
 #     '5qm8': 'regression',

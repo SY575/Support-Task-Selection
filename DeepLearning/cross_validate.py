@@ -65,7 +65,7 @@ if __name__ == '__main__':
         
         fn = args.target_col.split('_')[0]
         col = '_'.join(args.target_col.split('_')[1:])
-        df = pd.read_csv(f'../data_final/{fn}.csv')
+        df = pd.read_csv(f'../data/{fn}.csv')
         df = df[[df.columns[0], col]]
         df.loc[~df[col].isna()].to_csv(args.raw_path, index=False)
         
